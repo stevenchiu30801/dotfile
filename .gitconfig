@@ -1,0 +1,27 @@
+[user]
+	email = steven30801@gmail.com
+	name = stevenchiu30801
+
+[core]
+	editor = vim
+
+[color]
+	status = auto
+	branch = auto
+	diff = auto
+	log = auto
+	ui = true
+
+[push]
+	default = simple
+
+[alias]
+	co = checkout
+	ci = commit
+	st = status
+
+[apply]
+	whitespace = nowarn
+
+[merge]
+	tool = vimdiff

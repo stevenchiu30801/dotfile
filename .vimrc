@@ -28,16 +28,16 @@ Plugin 'VundleVim/Vundle.vim'
 " My Plugins
 "
 Plugin 'easymotion/vim-easymotion'
-Plugin 'vim-syntastic/syntastic'
+" Plugin 'vim-syntastic/syntastic'
 " Plugin 'altercation/vim-colors-solarized'
-Plugin 'scrooloose/nerdtree'
-Plugin 'MarcWeber/vim-addon-mw-utils'	" depended by snipmate
+" Plugin 'scrooloose/nerdtree'
+" Plugin 'MarcWeber/vim-addon-mw-utils'	" depended by snipmate
 Plugin 'tomtom/tlib_vim'	" depended by snipmate, tcommand
-Plugin 'garbas/vim-snipmate'
-Plugin 'honza/vim-snippets'
+" Plugin 'garbas/vim-snipmate'
+" Plugin 'honza/vim-snippets'
 Plugin 'tomtom/tcomment_vim'
-Plugin 'tpope/vim-surround'
-Plugin 'dhruvasagar/vim-table-mode'
+" Plugin 'tpope/vim-surround'
+" Plugin 'dhruvasagar/vim-table-mode'
 " Plugin 'airblade/vim-gitgutter'
 " Plugin 'Townk/vim-autoclose'
 " Plugin 'kien/ctrlp.vim'
@@ -79,8 +79,8 @@ set hlsearch				 " highlight search hits
 set history=50               " keep 50 lines of command line history
 set number                   " enable line numbers
 set autoindent               " enable autoindent
-" set expandtab 	             " use space instead of tab
-autocmd FileType make setlocal noexpandtab	" disable expandtab
+set expandtab 	             " use space instead of tab
+" autocmd FileType make setlocal noexpandtab	" disable expandtab
 set tabstop=4                " insert 2 spaces for a tab
 set shiftwidth=4             " the number of space characters inserted for indentation
 syntax on                    " enable syntax highlighting
@@ -119,12 +119,12 @@ highlight PmenuSel cterm=Bold ctermfg=Black ctermbg=Gray 		" selected word compl
 highlight StatusLine cterm=Bold ctermfg=Gray ctermbg=NONE		" statusline highlight
 
 " key mapping
-inoremap ( ()<Esc>i
-inoremap " ""<Esc>i
-inoremap ' ''<Esc>i
-inoremap [ []<Esc>i
-inoremap < <><Esc>i
-inoremap { {}<Esc>i
+" inoremap ( ()<Esc>i
+" inoremap " ""<Esc>i
+" inoremap ' ''<Esc>i
+" inoremap [ []<Esc>i
+" inoremap < <><Esc>i
+" inoremap { {}<Esc>i
 " inoremap {<CR> {<CR>}<Esc>ko<tab>
 
 " Smart mapping for tab completion
@@ -152,22 +152,22 @@ inoremap { {}<Esc>i
 
 " hit space to clear highlight
 
-function! Smart_EnterComplete()
-	let line = getline('.')
-	let substr = strpart(line, -1, col('.') + 1)
-	let substr = matchstr(substr, "[^ \t]*$")
-	if(strlen(substr) == 0)
-			return "\<CR>"
-	endif
-	let has_brace = match(substr, '{') != -1
-	if(!has_brace)
-		return "\<CR>"
-	else
-		return "\<CR>\<tab>\<CR>\<Up>\<Right>"
-	endif
-endfunction
-
-inoremap <CR> <c-r>=Smart_EnterComplete()<CR>
+" function! Smart_EnterComplete()
+" 	let line = getline('.')
+" 	let substr = strpart(line, -1, col('.') + 1)
+" 	let substr = matchstr(substr, "[^ \t]*$")
+" 	if(strlen(substr) == 0)
+" 			return "\<CR>"
+" 	endif
+" 	let has_brace = match(substr, '{') != -1
+" 	if(!has_brace)
+" 		return "\<CR>"
+" 	else
+" 		return "\<CR>\<tab>\<CR>\<Up>\<Right>"
+" 	endif
+" endfunction
+"
+" inoremap <CR> <c-r>=Smart_EnterComplete()<CR>
 
 nnoremap <Space> :noh<return><Space>
 
@@ -273,18 +273,18 @@ map n <Plug>(easymotion-next)
 map N <Plug>(easymotion-prev)
 
 " --- syntastic
-set statusline+=%#warningmsg#
-set statusline+=%{SyntasticStatuslineFlag()}
-set statusline+=%*
-
-let g:syntastic_always_populate_loc_list = 1
-let g:syntastic_auto_loc_list = 1
-let g:syntastic_check_on_open = 1
-let g:syntastic_check_on_wq = 0
+" set statusline+=%#warningmsg#
+" set statusline+=%{SyntasticStatuslineFlag()}
+" set statusline+=%*
+"
+" let g:syntastic_always_populate_loc_list = 1
+" let g:syntastic_auto_loc_list = 1
+" let g:syntastic_check_on_open = 1
+" let g:syntastic_check_on_wq = 0
 
 " --- NERDtree
 " display dotfiles
-let NERDTreeShowHidden=1
+" let NERDTreeShowHidden=1
 
 " --- TComment
 " comment lines with cmd+/

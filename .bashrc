@@ -39,12 +39,12 @@ export EDITOR=vim
 export BROWSER=elinks
 export GPG_TTY=$(tty)
 
-# Add RVM to PATH for scripting
-[[ -d $HOME/.rvm/bin ]] && export PATH="$PATH:$HOME/.rvm/bin"
-# Load RVM into a shell session *as a function*
-[[ -s "$HOME/.rvm/scripts/rvm" ]] && . $HOME/.rvm/scripts/rvm
-# Ruby gem user_dir
-export PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
+# # Add RVM to PATH for scripting
+# [[ -d $HOME/.rvm/bin ]] && export PATH="$PATH:$HOME/.rvm/bin"
+# # Load RVM into a shell session *as a function*
+# [[ -s "$HOME/.rvm/scripts/rvm" ]] && . $HOME/.rvm/scripts/rvm
+# # Ruby gem user_dir
+# export PATH="$PATH:$(ruby -e 'print Gem.user_dir')/bin"
 
 # history settings
 HISTCONTROL=ignoreboth

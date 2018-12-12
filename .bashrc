@@ -57,11 +57,6 @@ LESSHISTFILE=/dev/null
 # update the values of LINES and COLUMNS.
 shopt -s checkwinsize
 
-# bash completion
-[[ -r /usr/share/bash-completion/bash_completion ]] && . /usr/share/bash-completion/bash_completion
-# RVM bash completion
-[[ -r $HOME/.rvm/scripts/completion ]] && . $HOME/.rvm/scripts/completion
-
 # colored less
 export LESS_TERMCAP_mb=$(tput bold; tput setaf 3)
 export LESS_TERMCAP_md=$(tput bold; tput setaf 34)

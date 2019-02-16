@@ -13,7 +13,7 @@ if [ `pwd` == "/home/$USER/dotfile" ]; then
     cp .vimrc ~
     cp .tmux.conf ~
     . ~/.bashrc
-    echo -e "\e[32mDone!"
+    echo -e "\e[32mDone!\e[0m"
     exit 0
 else
     echo -e "\e[31mError!"

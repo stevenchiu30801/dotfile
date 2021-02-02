@@ -11,12 +11,24 @@ BASH_YELLOW="\[\e[33m\]"
 BASH_LIGHT_YELLOW="\[\e[1;33m\]"
 BASH_BLUE="\[\e[34m\]"
 BASH_LIGHT_BLUE="\[\e[1;34m\]"
+BASH_MAGENTA="\[\e[35m\]"
+BASH_LIGHT_MAGENTA="\[\e[1;35m\]"
 BASH_CYAN="\[\e[36m\]"
 BASH_LIGHT_CYAN="\[\e[1;36m\]"
 
 function git_branch {
     ref=$(git symbolic-ref HEAD 2> /dev/null) || return;
     echo "("${ref#refs/heads/}") ";
+}
+
+function kube_namespace {
+    # # Uncomment the following to enable showing Kubernetes namespace on shell prompt
+    # ctx=$(kubectl config current-context) || return;
+    # ns=$(kubectl config view -o jsonpath="{.contexts[?(@.name == \"$ctx\")].context.namespace}");
+    # if [[ -z "$ns" ]]; then
+    #     ns="default";
+    # fi
+    # echo "("$ns") ";
 }
 
 function git_since_last_commit {
@@ -31,7 +43,7 @@ function git_since_last_commit {
 }
 
 # prompt
-PS1="${BASH_WHITE}[${BASH_LIGHT_CYAN}\D{%F %a %I:%M %P}${BASH_WHITE}] ${BASH_LIGHT_GREEN}\u ${BASH_WHITE}@ ${BASH_LIGHT_GREEN}\h ${BASH_WHITE}: ${BASH_LIGHT_BLUE}\w ${BASH_LIGHT_YELLOW}\$(git_branch)${BASH_LIGHT_RED}\$(git_since_last_commit)${BASH_WHITE}\n\$ "
+PS1="${BASH_WHITE}[${BASH_LIGHT_CYAN}\D{%F %a %I:%M %P}${BASH_WHITE}] ${BASH_LIGHT_GREEN}\u ${BASH_WHITE}@ ${BASH_LIGHT_GREEN}\h ${BASH_WHITE}: ${BASH_LIGHT_BLUE}\w ${BASH_LIGHT_YELLOW}\$(git_branch)${BASH_LIGHT_RED}\$(git_since_last_commit)${BASH_LIGHT_MAGENTA}\$(kube_namespace)${BASH_WHITE}\n\$ "
 
 export LANG=en_US.UTF-8
 export LC_ALL=en_US.UTF-8
@@ -78,3 +90,4 @@ alias la='ls --color -AF'
 alias ll='ls --color -lAF'
 alias gdb='gdb -q'
 alias pacman='pacman --color always'	# arch package manager
+alias watch='watch --color'

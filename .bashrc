@@ -29,6 +29,7 @@ function kube_namespace {
     #     ns="default";
     # fi
     # echo "("$ns") ";
+    echo "";
 }
 
 function git_since_last_commit {

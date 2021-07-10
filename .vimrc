@@ -272,6 +272,8 @@ omap / <Plug>(easymotion-tn)
 map n <Plug>(easymotion-next)
 map N <Plug>(easymotion-prev)
 
+hi EasyMotionTarget ctermbg=none ctermfg=green
+
 " --- syntastic
 " set statusline+=%#warningmsg#
 " set statusline+=%{SyntasticStatuslineFlag()}

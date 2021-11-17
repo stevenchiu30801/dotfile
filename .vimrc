@@ -204,6 +204,11 @@ cnoremap <C-A>      <Home>
 cnoremap <C-E>      <End>
 cnoremap <C-K>      <C-U>
 
+" ctags
+set tags=tags;/
+" remap Ctrl+] key for Windows Terminal in Traditional Chinese keyboard
+nnoremap <C-k> <C-]>
+
 " hit <F8> to compile program
 " use :r to remove the file extension name
 imap <F8> <ESC>:call Compile()<CR>
